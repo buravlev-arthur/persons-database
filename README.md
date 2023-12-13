@@ -1,4 +1,4 @@
-![example workflow](https://github.com/buravlev-arthur/blacklist-animals/actions/workflows/deployProject.yml/badge.svg)
+![example workflow](https://github.com/buravlev-arthur/persons-database/actions/workflows/build.yml/badge.svg)
 [![Maintainability](https://api.codeclimate.com/v1/badges/6ef293db0866c9626764/maintainability)](https://codeclimate.com/github/buravlev-arthur/persons-database/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6ef293db0866c9626764/test_coverage)](https://codeclimate.com/github/buravlev-arthur/persons-database/test_coverage)
 

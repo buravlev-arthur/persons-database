@@ -1,23 +1,31 @@
 ![example workflow](https://github.com/buravlev-arthur/blacklist-animals/actions/workflows/deployProject.yml/badge.svg)
+[![Maintainability](https://api.codeclimate.com/v1/badges/6ef293db0866c9626764/maintainability)](https://codeclimate.com/github/buravlev-arthur/persons-database/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6ef293db0866c9626764/test_coverage)](https://codeclimate.com/github/buravlev-arthur/persons-database/test_coverage)
 
-# Бэкенд сервиса "Чёрный список владельцев животных"
+# База данных лиц
 
-Проект включает в себя API-сервер и парсер данных из старой базы данных с генерацией новой нормализованной БД.
+Проект включает в себя API-сервер, фронтенд-часть и парсер данных из старой базы данных с генерацией новой нормализованной БД.
 
-- Реализация: Express (NodeJS) + Typescript
-- Автотесты: Jest + Supertest
-- Контроль за качеством кода: ESLint + Prettier, Husky
+## Стек технологий
+
+- Бэкенд: Express (NodeJS), Typescript
+- Фронтенд: Vue 3, Typescript, Quasar Framework 2
+- Тестирование: Jest, Supertest
+- Качество кода: ESLint, Prettier, Husky
 
 ## Использование
 
 ```bash
 # Сервер
 node dist/bin/server.js
+# Запуск сервера в pm2
+pm2 start --name Persons-DB ./dist/bin/server.js
+
 # Парсер
 node dist/bin/parser.js
 ```
 
-## Разработка
+## Разработка (backend)
 
 ### Установка проекта
 
@@ -25,7 +33,7 @@ node dist/bin/parser.js
 make install
 ```
 
-В корне проекта создать файл `.env` со следующим содержимым:
+В корне проекта необходимо создать файл `.env` со следующим содержимым:
 
 ```text
 OLD_DB_HOST="<ip or domain>"
@@ -42,7 +50,7 @@ MAIL_PASSWORD="<mail service password>"
 MAIL_TO="<reciever email address>"
 ```
 
-### Линтинг и форматирование:
+### Линтинг и форматирование кода
 
 ```bash
 make lint
@@ -52,7 +60,10 @@ make prettier
 ### Тестирование
 
 ```bash
+# прогон тестов
 make test
+# тестовое покрытие кода
+make test-coverage
 ```
 
 ### Сборка
@@ -73,4 +84,21 @@ make watch
 # Консоль 2: Запуск скрипта проекта через nodemon
 npm i --global nodemon # Если nodemon не установлен глобально в системе
 nodemon dist/bin/server.js
+```
+
+## Разработка (frontend)
+
+```bash
+# директория с кодом фронтенд-части приложения
+cd frontend
+# установка
+npm install
+# запуск dev-сервера
+quasar dev
+# сборка проекта (в директорию dist)
+quasar build
+# линтинг кода
+npm run lint
+# форматирование кода
+npm run format
 ```

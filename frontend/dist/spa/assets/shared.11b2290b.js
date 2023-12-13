@@ -1,0 +1,1 @@
+const s=t=>{try{const e="vk.com";return new URL(t).host===e}catch{return!1}},o=t=>new RegExp(/^\+7 \(\d\d\d\) \d\d\d-\d\d-\d\d$/).test(t),a=t=>new RegExp(/^[А-Я][а-я]+ [А-Я][а-я]+$/).test(t);var r=(t=>(t.Phone="phone",t.VK="vk",t.Name="name",t))(r||{});export{r as F,s as a,a as b,o as i};

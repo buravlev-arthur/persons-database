@@ -1,0 +1,91 @@
+// This is just an example,
+// so you can safely delete all default props below
+
+export default {
+  shared: {
+    toSearchBtn: 'К поиску',
+    commentHint: 'Комментарий не может быть пустым',
+    commentLabel: 'Комментарий',
+    noData: 'Нет данных',
+  },
+  mainLayout: {
+    title: 'Чёрный список владельцев животных',
+    addBtn: 'Добавить в чёрный список',
+    totalCount: {
+      start: 'В списке',
+      end: 'человек',
+    },
+    footer: {
+      about: 'О сервисе',
+      contacts: 'Контакты',
+    },
+    countError: 'Не удалось получить количество человек',
+  },
+  addPersonPage: {
+    title: 'Добавить в чёрный список',
+    form: {
+      phoneLabel: 'Телефон',
+      phoneHint: 'Укажите корректный номер телефона',
+      lastnameLabel: 'Фамилия',
+      firstnameLabel: 'Имя',
+      surnameLabel: 'Отчество',
+      nameHint: 'С заглавной буквы, только русские символы',
+      vkLabel: 'Страница ВКонтакте',
+      vkHint: 'Укажите корректный адрес страницы ВКонтакте',
+      addressLabel: 'Адрес',
+      addressHint: 'Только русские символы, цифры и знаки: ,.:-',
+      submitBtn: 'Добавить владельца',
+      success: 'Данные владельца были успешно добавлены',
+      failed: 'Не удалось добавить владельца в базу данных',
+      alreadyExistsPhone: 'Владелец с таким телефоном уже существует',
+      alreadyExistsVK: 'Владелец с такой страницей ВКонтакте уже существует',
+      checkExistingError: 'Не удалось проверить данные владельца',
+    },
+    error:
+      'Некорректный query-параметр "field" в компоненте "AddPersonPage.vue", в "onMounted" методе',
+  },
+  contactsPage: {
+    title: 'Контакты',
+    text: 'Вы можете направить замечания, жалобы и предложения заполнив форму ниже',
+    messageLabel: 'Сообщение',
+    messageHint: 'Сообщение не может быть пустым',
+    sendBtn: 'Отправить',
+    error: 'Не удалось отправить сообщение',
+    success: 'Сообщение успешно отправлено',
+  },
+  notFoundPage: {
+    text: 'Страница не найдена',
+    toMainPageBtn: 'На главную',
+  },
+  resultsPage: {
+    title: 'Информация о владельце',
+    name: 'ФИО',
+    phone: 'Телефон',
+    vk: 'Страница ВКонтакте',
+    address: 'Адрес',
+    createdAt: 'Добавлен(а) в базу',
+    addCommentBtn: 'Отправить комментарий',
+    success: 'Комментарий успешно добавлен',
+    failedAddComment: 'Не удалось добавить комментарий',
+    failedGetComments: 'Не удалось получить список комментариев',
+  },
+  rulesPage: {
+    title: 'О сервисе',
+  },
+  searchPage: {
+    phone: 'Телефон',
+    phoneHint: 'Введите корректный номер телефона',
+    vk: 'ВКонтакте',
+    vkHint: 'Введите корректный адрес страницы',
+    vkPlaceholder: 'Ссылка на страницу ВКонтакте',
+    name: 'ФИО',
+    nameHint: 'Введите фамилию и имя корректно',
+    namePlaceholder: 'Фамилия Имя',
+    dialog: {
+      text: 'Владелец с указанными данными не найден. Добавить сейчас?',
+      cancelBtn: 'Отменить',
+      confirmBtn: 'Добавить',
+    },
+    searchError: 'Не удалось получить результаты поиска',
+  },
+};

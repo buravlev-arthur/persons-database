@@ -1,0 +1,48 @@
+name: depolyProject
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-vesrion: [18.x]
+    steps:
+      - name: Clone this repository
+        uses: actions/checkout@v2
+
+      - name: Set enviroment vars
+        run: |
+          echo "OLD_DB_HOST=${{ secrets.OLD_DB_HOST }}" >> "$GITHUB_ENV"
+          echo "OLD_DB_USER=${{ secrets.OLD_DB_USER }}" >> "$GITHUB_ENV"
+          echo "OLD_DB_PASSWORD=${{ secrets.OLD_DB_PASSWORD }}" >> "$GITHUB_ENV"
+          echo "OLD_DB_NAME=${{ secrets.OLD_DB_NAME }}" >> "$GITHUB_ENV"
+          echo "NEW_DB_HOST=${{ secrets.NEW_DB_HOST }}" >> "$GITHUB_ENV"
+          echo "NEW_DB_USER=${{ secrets.NEW_DB_USER }}" >> "$GITHUB_ENV"
+          echo "NEW_DB_PASSWORD=${{ secrets.NEW_DB_PASSWORD }}" >> "$GITHUB_ENV"
+          echo "NEW_DB_NAME=${{ secrets.NEW_DB_NAME }}" >> "$GITHUB_ENV"
+          echo "NEW_DB_PORT=${{ secrets.NEW_DB_PORT }}" >> "$GITHUB_ENV"
+          echo "MAIL_USER=${{ secrets.MAIL_USER }}" >> "$GITHUB_ENV"
+          echo "MAIL_PASSWORD=${{ secrets.MAIL_PASSWORD }}" >> "$GITHUB_ENV"
+          echo "MAIL_TO=${{ secrets.MAIL_TO }}" >> "$GITHUB_ENV"
+
+      - name: Install node
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-vesrion }}
+
+      - name: Install dependencies
+        run: make install
+
+      - name: Linting
+        run: make lint
+
+      - name: Testing
+        run: make test
+
+      - name: Building
+        run: make build

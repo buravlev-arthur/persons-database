@@ -1,0 +1,51 @@
+{
+  "name": "blacklist-animals",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The search engine for phones of blacklist animal owners",
+  "main": "index.js",
+  "scripts": {
+    "app:install": "npm install && npm run husky:install",
+    "app:watch": "npx run-when-changed --watch \"./**/*.ts\" --exec \"make build\"",
+    "app:build": "npx tsc",
+    "frontend:build": "cd ./frontend && quasar build",
+    "frontend:dev": "cd ./frontend && quasar dev",
+    "lint": "eslint ./**/*.ts",
+    "prettier": "prettier ./**/*.ts --write",
+    "test": "npx jest",
+    "husky:install": "husky install"
+  },
+  "author": "Arthur Buravljov",
+  "license": "none",
+  "devDependencies": {
+    "@types/cors": "^2.8.13",
+    "@types/express": "^4.17.17",
+    "@types/got": "^9.6.12",
+    "@types/jest": "^29.5.3",
+    "@types/jsdom": "^21.1.1",
+    "@types/node": "^20.4.2",
+    "@types/nodemailer": "^6.4.9",
+    "@types/supertest": "^2.0.12",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "husky": "^8.0.3",
+    "jest": "^29.6.1",
+    "jest-ts-webcompat-resolver": "^1.0.0",
+    "prettier": "^3.0.0",
+    "run-when-changed": "^2.1.0",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.1",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "got": "^13.0.0",
+    "jsdom": "^22.1.0",
+    "mysql2": "^3.5.2",
+    "nodemailer": "^6.9.4"
+  }
+}

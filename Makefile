@@ -16,6 +16,9 @@ prettier:
 test:
 	npm run test
 
+test-coverage:
+	npm run test:coverage
+
 frontend-build:
 	npm run frontend:build
 
